@@ -23,8 +23,8 @@ void at24c256b_byte_write(I2C_HandleTypeDef * hi2c, uint16_t DevAddress, int8_t*
 {
 	write_protection(0, GPIOx, GPIO_Pin_WP);
 	uint8_t address_and_data[3] = {0};
-	address_and_data[0] = (uint8_t)address;
-	address_and_data[1] = (uint8_t)(address << 8);
+	address_and_data[0] = (uint8_t)(address << 8);
+	address_and_data[1] = (uint8_t)(address);
 	address_and_data[2] = (uint8_t)*pData;
 	HAL_I2C_Master_Transmit(hi2c, DevAddress, address_and_data, 3, 100);
 }
