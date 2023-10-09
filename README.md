@@ -6,9 +6,9 @@ This repository will serve as a collection of API files I've created for various
 ## MMA8452x - 3-Axis, 12-bit/8-bit Digital Accelerometer
 
 ## ADXL345 - 3-Axis, 13-bit/10-bit ±2/4/8/16g Digital Accelerometer
-### Schematic
+### Schematic for ADXL345
 ![App Screenshot](https://github.com/ArtemHW/images/blob/main/schematic_adxl345.jpg)
-## PCB
+## PCB for ADXL345
 ![App Screenshot](https://github.com/ArtemHW/images/blob/main/pcb_adxl345.jpg)
 ## OV2640 - Color CMOS UXGA CameraChip
 
