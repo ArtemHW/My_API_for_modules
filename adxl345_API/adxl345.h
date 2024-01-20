@@ -26,6 +26,7 @@
 
 void adxl345_bw_rate_setup(SPI_HandleTypeDef* hspi, GPIO_TypeDef * CS_port, uint32_t CS_pin, uint8_t rate);
 void adxl345_measure_mode(SPI_HandleTypeDef* hspi, GPIO_TypeDef * CS_port, uint32_t CS_pin);
+void adxl345_data_format(SPI_HandleTypeDef* hspi, GPIO_TypeDef * CS_port, uint32_t CS_pin, uint8_t data_format);
 void adxl345_read_data(SPI_HandleTypeDef* hspi, GPIO_TypeDef * CS_port, uint32_t CS_pin, uint8_t* buffer);
 
 #endif /* INC_ADXL345_H_ */

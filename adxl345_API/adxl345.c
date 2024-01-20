@@ -60,6 +60,23 @@ void adxl345_measure_mode(SPI_HandleTypeDef* hspi, GPIO_TypeDef * CS_port, uint3
 }
 
 /*
+ * @brief adxl345_data_format - Configures data format
+ * @param  hspi pointer to a SPI_HandleTypeDef structure that contains
+ *               the configuration information for SPI module.
+ * @param  CS_port - CS port address
+ * @param  CS_pin - CS pin number
+ * @param  data_format - Information for the accelerometer DATA_FORMAT register
+ */
+void adxl345_data_format(SPI_HandleTypeDef* hspi, GPIO_TypeDef * CS_port, uint32_t CS_pin, uint8_t data_format)
+{
+	uint8_t instr = DATA_FORMAT;
+	CS_port->ODR &= ~(1<<CS_pin);
+	HAL_SPI_Transmit(hspi, &instr, 1, 100);
+	HAL_SPI_Transmit(hspi, &data_format, 1, 100);
+	CS_port->ODR |= (1<<CS_pin);
+}
+
+/*
  * @brief adxl345_read_data - Gets the data from the three axes of the accelerometer.
  * @param  hspi pointer to a SPI_HandleTypeDef structure that contains
  *               the configuration information for SPI module.
